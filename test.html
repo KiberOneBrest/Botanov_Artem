@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Словари: 1000 слов - Русская раскладка / Клавиатурный тренажер Stamina-online</title>
+        <meta name="keywords" content="клавиатура, тренажер, слепой, десятипальцевый, печать, печатать, набор, метод, онлайн, обучение, учиться, урок, машинопись">
+        <meta name="description" content="Упражнение для развития десятипальцевого метода и повышения скорости слепой печати: Русская раскладка клавиатуры, Частотные словари, 1000 слов">
+        <meta name="turbolinks-cache-control" content="no-cache">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=1" color="#5bbad5">
+        <link rel="manifest" href="/site.webmanifest?v=1">
+        <link rel="shortcut icon" href="/favicon.ico?v=1">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="_csrf" content="af930026-43b1-4677-871b-0d6d27eef095">
+        <link rel="stylesheet" type="text/css" href="/assets/default.css?v=17" data-turbolinks-track="reload">
+        <script src="/assets/app.js?v=17" data-turbolinks-track="reload" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" data-turbolinks-track="reload" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" data-turbolinks-track="reload" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" data-turbolinks-track="reload" async></script>
+    </head>
+    <body class="bg-blue-1">
+        <div id="app" v-cloak>
+            <script type="application/json">
+                {
+                    "TOAST_SENDING_FAIL": {
+                        "type": "danger",
+                        "title": "Ошибка!",
+                        "message": "Не удалось отправить результаты тренировки на сервер!",
+                        "time": 5000
+                    }
+                }</script>
+            <script type="application/json">
+                {
+                    "exercise": {
+                        "back": "/ru/dictionaries/ru#frequency",
+                        "text": "снимать игра возможно урок туда зависеть например помощь дед милый создавать предложение старший хоть душа глядеть красный новый пусть парень высокий дальше сила создание товарищ есть себя ли ответ ставить эти играть сильно село давно голубой пускать ребёнок да академия восьмой прежде молчать на добиваться вывод ходить основание ночь бывать рост природа запас выход тяжёлый эта именно революция иногда если менее воспитание двести окно право живой сам и мало задача мимо без уходить небольшой атмосфера ",
+                        "autostop": true,
+                        "extra": true,
+                        "repeat": true,
+                        "layouts": [
+                            "RU"
+                        ]
+                    },
+                    "quotes": [
+                        {
+                            "author": "Лев Николаевич Толстой \"Путь жизни\"",
+                            "text": "Важно не количество знаний, а качество их. Можно знать очень многое, не зная самого нужного."
+                        },
+                        {
+                            "author": "Федор Михайлович Достоевский",
+                            "text": "Разум — подлец, оправдает что угодно!"
+                        },
+                        {
+                            "author": "Жан-Поль Сартр \"Мухи\"",
+                            "text": "Настоящая человеческая жизнь начинается по ту сторону отчаяния."
+                        }
+                    ],
+                    "settings": {
+                        "keyboard": true,
+                        "hands": true,
+                        "autostop": 180000,
+                        "chuck": 0
+                    }
+                }</script>
+            <v-layout width="100%" margin="0">
+                <template #header>
+                    <v-progress :value="progress.value" :max="progress.max"></v-progress>
+                    <v-header>
+                        <v-header-logo href="https://stamina-online.com" title="Клавиатурный тренажер Stamina-online" class="left">
+                            Stamina-online<small>клавиатурный тренажер</small>
+                        </v-header-logo>
+                        <v-header-menu class="right">
+                            <li>
+                                <a href="/ru/theory" title="Как научиться печатать вслепую. Советы по обучению слепому десятипальцевому методу набора">Теория</a>
+                            </li>
+                            <li v-show="true">
+                                <a href="/ru/lessons/ru" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Русская раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/en" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Английская раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/es" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Испанская раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/it" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Итальянская раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/de" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Немецкая раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/pt" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Португальская раскладка">Уроки</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/lessons/fr" title="Практические уроки набора текста для изучения десятипальцевого метода и слепой печати. Французская раскладка">Уроки</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Дополнительные упражнения для повышения скорости печати" @click.prevent>Тренировка</a>
+                                <ul>
+                                    <li v-show="true">
+                                        <a href="/ru/phrases/ru" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Русская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/en" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Английская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/es" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Испанская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/it" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Итальянская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/de" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Немецкая раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/pt" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Португальская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/phrases/fr" title="Повышаем скорость печати десятипальцевым методом, набирая предложения и фразы вслепую. Французская раскладка">Фразы</a>
+                                    </li>
+                                    <li v-show="true">
+                                        <a href="/ru/dictionaries/ru" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Русская раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/en" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Английская раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/es" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Испанская раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/it" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Итальянская раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/de" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Немецкая раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/pt" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Португальская раскладка">Словари</a>
+                                    </li>
+                                    <li v-show="false">
+                                        <a href="/ru/dictionaries/fr" title="Тренируемся быстро набирать часто встречающиеся слова и их части для повышения скорости слепой печати. Французская раскладка">Словари</a>
+                                    </li>
+                                    <li>
+                                        <a href="/ru/programming" title="Повышаем скорость программирования. Набираем операторы языков программирования вслепую. Изучаем десятипальцевый метод печати">Яз. прогр</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/ru/hotkeys" title="Горячие клавиши. Клавиши быстрого доступа популярных программ">Клавиши</a>
+                            </li>
+                            <li v-show="false">
+                                <a href="/ru/registration" title="Зарегистрировать нового пользователя">Регистрация</a>
+                            </li>
+                            <li>
+                                <a href="/ru/login" title="Авторизоваться, Войти">Войти</a>
+                            </li>
+                        </v-header-menu>
+                    </v-header>
+                </template>
+                <template #body>
+                    <h2 v-show="false">Словари. Русская раскладка. Частотные словари. 1000 слов</h2>
+                    <p v-show="false" v-for="text in $gibberish($meta('description'), {seed: 0, multiline: true}).split('\n')">{{text}}</p>
+                    <v-br50></v-br50>
+                    <v-timer>{{time | mmss}}</v-timer>
+                    <v-br30></v-br30>
+                    <div style="margin: 2px auto; width:90%; line-height: 20px;">
+                        <v-breadcrumb>
+                            Словари &gt;Русская раскладка &gt;Частотные словари &gt;1000 слов | <b @click="pause">пауза</b>
+                        </v-breadcrumb>
+                        <v-controls>
+                            <v-controls-checkbox v-model="settings.keyboard" icon="keyboard" :code="112" title="[F1] Показать клавиатуру;[F1] Скрыть клавиатуру"></v-controls-checkbox>
+                            <v-controls-checkbox v-model="settings.hands" icon="hands" :code="113" title="[F2] Показать руки;[F2] Скрыть руки"></v-controls-checkbox>
+                            <v-controls-switch v-model="settings.autostop" :available="[1,2,3,5,10].filter(v => 60000*v-5000 > time)" :rate="60000" icon="timer" :code="114" title="[F3] Время автоматической остановки"></v-controls-switch>
+                            <v-controls-switch v-model="settings.chuck" available="0,5,10,20,30,40,60,90" :rate="1000" icon="chuck" :code="115" title="[F4] Режим &quot;Железные нервы&quot;"></v-controls-switch>
+                        </v-controls>
+                    </div>
+                    <v-textboard :text="exercise.text" :position="position" :active="state === 1" title-left="Пробел - СТАРТ" title-right="Esc - СТОП/Выход"></v-textboard>
+                    <v-br50></v-br50>
+                    <div class="center">
+                        <v-hand :type="0" :code="char.code" :shift="char.shift" :ctrl="char.ctrl" :alt="char.alt" :meta="char.meta" :active="state === 1" :visible="settings.hands"></v-hand>
+                        <v-keyboard :layout="char.layout" :code="char.code" :shift="char.shift" :ctrl="char.ctrl" :alt="char.alt" :meta="char.meta" :active="state === 1" :visible="settings.keyboard"></v-keyboard>
+                        <v-hand :type="1" :code="char.code" :shift="char.shift" :ctrl="char.ctrl" :alt="char.alt" :meta="char.meta" :active="state === 1" :visible="settings.hands"></v-hand>
+                    </div>
+                    <v-br50></v-br50>
+                    <v-backdrop v-if="isOpenModal"></v-backdrop>
+                    <v-modal v-if="state === 2">
+                        <v-modal-header>
+                            <h3>Ошибка</h3>
+                        </v-modal-header>
+                        <v-modal-body style="padding: 15px 30px;">
+                            <p v-html="quote.current>=0 ? quotes[quote.current].text : ''"></p>
+                            <v-br5></v-br5>
+                            <i class="right">{{quote.current>=0 ? quotes[quote.current].author : ""}}</i>
+                        </v-modal-body>
+                        <v-modal-footer align="center">
+                            <v-progress-bar-container v-if="quote.time>0" type="space" background="#fff" width="90%" height="31px" border-radius="4px">
+                                <v-progress-bar color="cyan" :max="settings.chuck" :value="quote.time" border-radius="3px" stripes animate></v-progress-bar>
+                            </v-progress-bar-container>
+                            <v-button type="danger" width="160px" @click="resume()" v-else>Закрыть</v-button>
+                        </v-modal-footer>
+                    </v-modal>
+                    <v-modal width="700px" v-if="state === 3 || state === 4">
+                        <v-modal-header>
+                            <h3>Результат</h3>
+                        </v-modal-header>
+                        <v-modal-body style="max-height: none;">
+                            <div class="center">
+                                <v-summary-item title="ВРЕМЯ" icon="clock" color="#2f9619" :value="time | mmss" gap="25px"></v-summary-item>
+                                <v-summary-item title="НАБРАНО" icon="keyboard" color="#9e2cd8" :value="resultToShow.typed" :measure="MEASURES[measure].value" gap="25px"></v-summary-item>
+                                <v-summary-item title="СКОРОСТЬ" icon="tachometer-alt" color="#d8900e" :value="(resultToShow.speed * 10 >> 0) / 10" :measure="MEASURES[measure].title" gap="25px"></v-summary-item>
+                                <v-summary-item title="ТОЧНОСТЬ" icon="target" color="#d84d15" :value="(resultToShow.accuracy * 10 >> 0) / 10" measure="%"></v-summary-item>
+                            </div>
+                            <v-br10></v-br10>
+                            <div style="margin:0 auto;" :style="{width: chart.width, height: chart.height}" v-show="chart.visible">
+                                <v-chart-speed :speeds="resultToShow.chart.speeds" :errors="resultToShow.chart.errors"></v-chart-speed>
+                            </div>
+                        </v-modal-body>
+                        <v-modal-footer v-if="state === 3">
+                            <v-button type="primary" width="120px" @click="send(exercise.back)" :disabled="sending">Завершить</v-button>
+                            <v-button type="primary" v-if="exercise.repeat" @click="restart(1)">Начать сначала</v-button>
+                            <v-button type="danger" width="120px" @click="resume()">Продолжить</v-button>
+                        </v-modal-footer>
+                        <v-modal-footer v-else>
+                            <v-button type="primary" width="120px" v-if="exercise.repeat" @click="send($url())" :disabled="sending">Повторить</v-button>
+                            <v-button type="primary" width="120px" v-if="exercise.next" @click="send(exercise.next)" :disabled="sending">Следующий</v-button>
+                            <v-button type="danger" width="120px" @click="send(exercise.back)" :disabled="sending">Завершить</v-button>
+                        </v-modal-footer>
+                    </v-modal>
+                </template>
+                <template #footer>
+                    <v-yandex-rtb id="R-A-117132-2"></v-yandex-rtb>
+                    <v-br20></v-br20>
+                    <v-footer>
+                        <v-locale class="left" locale="ru" locales="ru"></v-locale>
+                        <v-footer-menu class="left">
+                            <li>
+                                <a href="/ru/privacy" title="Узнайте больше о том, как мы работаем с персональными данными">Конфиденциальность</a>
+                            </li>
+                            <li>
+                                <a href="/ru/terms" title="Правила и условия использования клавиатурного тренажера">Условия использования</a>
+                            </li>
+                            <li>
+                                <a href="/ru/feedback" title="Связаться с нами, форма обратной связи, контакты">Связаться с нами</a>
+                            </li>
+                        </v-footer-menu>
+                        <div class="right">
+                            Расскажите о нас:
+        <v-ya-share url="https://stamina-online.com" title="Stamina-online | Клавиатурный тренажер" lang="ru" size="s" services="vkontakte,facebook,odnoklassniki,moimir,twitter,reddit,whatsapp,telegram" description="Научитесь печатать вслепую и тренируйте свои навыки набора текста с бесплатным клавиатурным тренажером Stamina-online. Благодаря большому выбору динамичных уроков и упражнений вы легко и быстро освоите десятипальцевый метод" image="https://stamina-online.com/assets/images/share.png"></v-ya-share>
+                        </div>
+                    </v-footer>
+                </template>
+            </v-layout>
+            <v-toastbox :gap="isOpenModal ? 0 : 40" :z-index="isOpenModal ? 9002 : 100"></v-toastbox>
+            <script type="application/json">
+                {
+                    "measure": "chars",
+                    "MEASURES": {
+                        "words": {
+                            "title": "сл/м",
+                            "value": "сл",
+                            "speed": "wpm",
+                            "accuracy": "aiw",
+                            "divider": 15
+                        },
+                        "chars": {
+                            "title": "зн/м",
+                            "value": "зн",
+                            "speed": "cpm",
+                            "accuracy": "aic",
+                            "divider": 100
+                        }
+                    }
+                }</script>
+            <v-measure-changer v-model="measure" @input="$http.put('/rest/measure/'+$event)" title="зн|сл" :second="false" :z-index='isOpenModal ? 9003 : 2'></v-measure-changer>
+            <v-banner @close="$http['delete']('/rest/banner')">
+                <li>
+                    <a href="/ru/feedback" title="Связаться с нами, форма обратной связи, контакты">Сообщить об ошибке</a>
+                </li>
+                <li>
+                    <a href="#" @click.prevent>Наши проекты</a>
+                    <ul>
+                        <li>
+                            <a href="https://abchess.ru" title="шахматные задачи, шахматы для начинающих, шахматы для детей">
+                                ABChess<small>Программы для обучения шахматам</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://всеокофе.рф" title="рецепты кофе, фото кофе, кофе в турке, молотый кофе, как варить кофе">
+                                ВсеОКофе<small>Все что вам хотелось бы знать о кофе</small>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </v-banner>
+            <v-google-analytics id="UA-30374464-10"></v-google-analytics>
+            <v-yandex-metrika :id="85315594"></v-yandex-metrika>
+            <v-rambler-top100 :id="7449771"></v-rambler-top100>
+            <v-mail-rating :id="3226528"></v-mail-rating>
+            <v-live-internet></v-live-internet>
+        </div>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8dc9fafdd80d6f4c","version":"2024.10.4","r":1,"token":"10652d3f329840f2b177015149cd50b3","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+    </body>
+</html>

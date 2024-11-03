@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="about.html">Об авторе</a>
+                <a href="Index.html">Главная</a>
+                <a href="otziv.html">Отзыв</a>
+            </ul>
+        </nav>
+    </header>
+       <main>
+         <section>
+            <form>
+                <label for="name">Введите Имя</label>
+                <input type="text" id="name" name="name"
+                required  placeholder="Фамилия Имя Очество">
+                <label for="email"><b>Email</b></label>
+                <input type="email" for="email" id="email" name="email"
+                required placeholder="email@*.*"></input>
+                
+                <input type="radio">
+                <label for="name">Имя</label>
+
+                <label for="where"><b>Откуда вы узнали про сайт?</b></label>
+                <select name="where" id="where">
+                    <option value="Делал его на уроке">Делал его на уроке</option>
+                    <option value="Перешел по ссылке">Перешел по ссылке</option>
+                    <option value="Леша рассказал">Леша рассказал</option>
+                </select>
+
+                <label for="add"><i>дополнительные коментарии</i></label>
+                <textarea name="add" id="add" cols="30" rows="10"></textarea>
+                <button type="submit">Отправить отзыв</button>
+            </form>
+         </section>
+       
+       </main>
+
+
+
+    <footer>
+        <div>Иван Кувашов</div>
+        <div>2024</div>
+    </footer>
+</body>
+</html>
